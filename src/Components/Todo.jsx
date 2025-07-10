@@ -20,14 +20,14 @@ function Todo() {
     <div
       className="min-vh-100 d-flex justify-content-center align-items-center"
       style={{
-        backgroundColor: "#014d33", 
+        backgroundColor: "#014d33",
         fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         className="p-4"
         style={{
-          backgroundColor: "rgba(0, 128, 0, 0.15)", 
+          backgroundColor: "rgba(0, 128, 0, 0.15)",
           backdropFilter: "blur(8px)",
           borderRadius: "20px",
           width: "100%",
@@ -39,7 +39,7 @@ function Todo() {
           Todo App
         </h2>
 
-       
+
         <div className="d-flex mb-4">
           <input
             type="text"
@@ -50,11 +50,20 @@ function Todo() {
             style={{
               backgroundColor: "rgba(255, 255, 255, 0.08)",
               color: "#d9ffe0",
-              border: "none",
+              border: "2px solid transparent",
               borderRadius: "12px",
               padding: "10px",
+              outline: "none",
+              boxShadow: "none",
+            }}
+            onFocus={(e) => {
+              e.target.style.border = "2px solid #00a676"; 
+            }}
+            onBlur={(e) => {
+              e.target.style.border = "2px solid transparent";
             }}
           />
+
           <button
             onClick={addTask}
             style={{
@@ -79,7 +88,7 @@ function Todo() {
               key={index}
               className="mb-3 d-flex justify-content-between align-items-center px-3 py-2"
               style={{
-                backgroundColor: "rgba(0, 128, 0, 0.1)", 
+                backgroundColor: "rgba(0, 128, 0, 0.1)",
                 borderRadius: "12px",
                 color: "#e0ffe0",
                 boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
@@ -89,7 +98,7 @@ function Todo() {
               <button
                 onClick={() => deleteTask(index)}
                 style={{
-                  backgroundColor: "#dc3545", 
+                  backgroundColor: "#dc3545",
                   color: "#fff",
                   padding: "6px 12px",
                   border: "none",
